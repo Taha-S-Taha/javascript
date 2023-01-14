@@ -1,0 +1,13 @@
+Which of the following names don't satisfy the style guidelines for naming variables, functions, or constants?
+
+
+index;
+CatName;
+snake_case; not valid
+lazyDog;
+quick_Fox; not valid
+1stCharacter; not valid 
+operand2;
+BIG_NUMBER; 
+
+
