@@ -1,8 +1,0 @@
-index; function
-CatName; function
-snake_case; not function
-lazyDog; function
-quick_Fox; not function
-1stCharacter; not function
-operand2; function
-BIG_NUMBER; not function

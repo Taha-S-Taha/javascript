@@ -1,7 +1,0 @@
-Explain why this code logs '510' instead of 15.
-
->>console.log('5' + 10);
-
-When the + operator is passed a String data type and a Number it implicitly
-converts the Number into a String then performs concatenation of the two 
-Strings. 

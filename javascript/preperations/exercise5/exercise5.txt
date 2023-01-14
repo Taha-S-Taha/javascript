@@ -1,7 +1,0 @@
-Identify the Constructors for each of the following methods and classify each method as either a "Static" or a "Prototype" method:
-
-substring: String: instance 
-create: Object: Static 
-fromCharCode:String: Static
-slice: Array: String: instance
-toString: String: Object: Array: Number: instance
