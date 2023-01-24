@@ -1,0 +1,183 @@
+0:00:01.520,0:00:05.920
+in this exercise we're given some code
+
+0:00:03.840,0:00:06.879
+and asked to figure out what's wrong
+
+0:00:05.920,0:00:09.920
+with it
+
+0:00:06.879,0:00:11.519
+right now we know that it causes an
+
+0:00:09.920,0:00:13.599
+infinite loop
+
+0:00:11.519,0:00:15.599
+so an infinite loop is a loop that just
+
+0:00:13.599,0:00:17.920
+keeps going forever and ever and never
+
+0:00:15.599,0:00:19.920
+stops if i run this file the loop will
+
+0:00:17.920,0:00:21.840
+continually iterate and i'll have to
+
+0:00:19.920,0:00:24.640
+force quit the program in the terminal
+
+0:00:21.840,0:00:26.960
+with something like control or command c
+
+0:00:24.640,0:00:28.480
+i can actually show you that if we run
+
+0:00:26.960,0:00:32.960
+the file and
+
+0:00:28.480,0:00:34.559
+get ready for a bunch of output ones
+
+0:00:32.960,0:00:37.760
+as you can see it's just going to keep
+
+0:00:34.559,0:00:39.520
+going and going and going until i force
+
+0:00:37.760,0:00:42.160
+it to stop
+
+0:00:39.520,0:00:43.360
+and there's plenty of output here for us
+
+0:00:42.160,0:00:44.559
+to look at
+
+0:00:43.360,0:00:46.800
+it's
+
+0:00:44.559,0:00:48.879
+quite a bit
+
+0:00:46.800,0:00:51.039
+so let's evaluate this code and figure
+
+0:00:48.879,0:00:53.600
+out what is going wrong with it the
+
+0:00:51.039,0:00:56.480
+first thing we're doing is declaring
+
+0:00:53.600,0:00:58.960
+this variable counter in the top level
+
+0:00:56.480,0:01:00.320
+scope and initializing it to the value
+
+0:00:58.960,0:01:02.879
+0.
+
+0:01:00.320,0:01:05.600
+and then next we have this while loop on
+
+0:01:02.879,0:01:07.920
+lines 3 through 10 and what a while loop
+
+0:01:05.600,0:01:10.560
+does is it will continually execute as
+
+0:01:07.920,0:01:14.640
+long as the conditional expression we
+
+0:01:10.560,0:01:17.280
+provide it returns a truthy value
+
+0:01:14.640,0:01:20.080
+in this case the conditional expression
+
+0:01:17.280,0:01:23.119
+we are providing on line three
+
+0:01:20.080,0:01:25.200
+is reassigning the value of the variable
+
+0:01:23.119,0:01:27.040
+counter to one
+
+0:01:25.200,0:01:29.280
+this is tricky because reassignment
+
+0:01:27.040,0:01:31.680
+expressions always return the value
+
+0:01:29.280,0:01:34.640
+that's being assigned and in this case
+
+0:01:31.680,0:01:36.880
+that value is 1 which is truthy
+
+0:01:34.640,0:01:39.439
+therefore this expression will always
+
+0:01:36.880,0:01:42.240
+return a truthy value and the loop will
+
+0:01:39.439,0:01:43.600
+never stop executing
+
+0:01:42.240,0:01:45.680
+we might think that
+
+0:01:43.600,0:01:48.479
+because we're incrementing counter on
+
+0:01:45.680,0:01:50.560
+line 5 that eventually this break
+
+0:01:48.479,0:01:52.479
+statement on line 8 should execute and
+
+0:01:50.560,0:01:55.920
+we should get out of the loop but the
+
+0:01:52.479,0:01:59.920
+problem here is that because while has
+
+0:01:55.920,0:02:02.079
+to evaluate this expression each time we
+
+0:01:59.920,0:02:04.960
+iterate through the loop counter is
+
+0:02:02.079,0:02:08.160
+getting reassigned to one every time the
+
+0:02:04.960,0:02:11.360
+loop iterates which means that on line 5
+
+0:02:08.160,0:02:14.640
+counter is getting reassigned to 2. line
+
+0:02:11.360,0:02:17.280
+7 needs counter to be greater than 2 to
+
+0:02:14.640,0:02:19.599
+return true so this break statement will
+
+0:02:17.280,0:02:21.760
+never get run because as soon as we get
+
+0:02:19.599,0:02:26.000
+down here we go back up to the top and
+
+0:02:21.760,0:02:27.840
+counter is reassigned again to 1.
+
+0:02:26.000,0:02:31.200
+so that's what happens when you have an
+
+0:02:27.840,0:02:31.200
+infinite loop
+

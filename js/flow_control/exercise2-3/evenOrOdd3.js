@@ -1,19 +1,40 @@
 /*
-Let's improve our previous implementation of evenOrOdd. Add a validation check to ensure that the argument is an integer. If it isn't, the function should issue an error message and return
+Let's improve our previous implementation of evenOrOdd. Add 
+a validation check to ensure that the argument is an integer. 
+If it isn't, the function should issue an error message and 
+return.
 */
 
-function evenOrOdd(int) {
-  if (!(Number.isInteger(int))) {
-    console.log('This is not an integer!')
+//my attempt
+/*
+function evenOrOdd(number) {
+  if (number % 2 === 0 && number === parseInt(number)) {
+    console.log('even');
+  } else if (number % 2 === 0 || number !== parseInt(number)) {
+    console.log("this number is not an integer");
+    return;
+  } else {
+  	console.log("odd");
+
+  }
+}
+evenOrOdd(3.2)
+*/
+
+//book solution
+/*
+function evenOrOdd(number) {
+  if (!Number.isInteger(number)) {
+    console.log('Sorry, the value you passed is not an integer');
     return;
   }
-  switch (int) {
-  case int % 2 === 0:
-  console.log('even');
-  break;
-  default:
-  console.log('odd');
-  break;
-  };
+
+  if (number % 2 === 0) {
+    console.log('even');
+  } else {
+    console.log('odd');
+  }
 }
-evenOrOdd(4.8)
+*/
+
+//note: book solution seems to be more concise 

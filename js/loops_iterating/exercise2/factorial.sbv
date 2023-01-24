@@ -1,0 +1,411 @@
+0:00:01.439,0:00:06.160
+in this exercise we're asked to write a
+
+0:00:03.760,0:00:09.040
+function that computes and returns the
+
+0:00:06.160,0:00:10.400
+factorial of a number by using a for
+
+0:00:09.040,0:00:12.400
+loop
+
+0:00:10.400,0:00:14.559
+so the first thing i'm going to do is
+
+0:00:12.400,0:00:17.600
+declare my function and i'm just going
+
+0:00:14.559,0:00:20.000
+to call that something like factorial
+
+0:00:17.600,0:00:22.240
+and we know that we are receiving a
+
+0:00:20.000,0:00:23.519
+single argument a positive integer so
+
+0:00:22.240,0:00:25.519
+i'm just going to call that something
+
+0:00:23.519,0:00:28.560
+like n
+
+0:00:25.519,0:00:31.519
+and we're also given a number of test
+
+0:00:28.560,0:00:34.559
+cases that we can use to ensure that
+
+0:00:31.519,0:00:37.280
+this function is working properly so we
+
+0:00:34.559,0:00:39.440
+can check the answer against what we
+
+0:00:37.280,0:00:41.600
+what these factorials should be
+
+0:00:39.440,0:00:42.960
+returning once we have our logic in
+
+0:00:41.600,0:00:44.800
+place
+
+0:00:42.960,0:00:48.320
+before i do that the first thing i'm
+
+0:00:44.800,0:00:50.399
+going to do for myself is define what a
+
+0:00:48.320,0:00:53.680
+factorial is
+
+0:00:50.399,0:00:56.239
+so for any given number n a factorial of
+
+0:00:53.680,0:00:58.559
+that number is the result of multiplying
+
+0:00:56.239,0:01:01.840
+all the integers between 1 and that
+
+0:00:58.559,0:01:06.080
+number inclusive so if i have n
+
+0:01:01.840,0:01:07.360
+basically a factorial is 1 times 2 times
+
+0:01:06.080,0:01:10.320
+3
+
+0:01:07.360,0:01:11.360
+etc until i get to
+
+0:01:10.320,0:01:13.200
+n
+
+0:01:11.360,0:01:15.680
+now that's one way to think about it but
+
+0:01:13.200,0:01:18.640
+if i set myself up with an example and
+
+0:01:15.680,0:01:20.720
+start thinking about how i might iterate
+
+0:01:18.640,0:01:22.799
+a loop the first thing i want to think
+
+0:01:20.720,0:01:25.280
+about in when i'm iterating loop is
+
+0:01:22.799,0:01:28.000
+what's my stop condition i want to say
+
+0:01:25.280,0:01:29.920
+that n is my stop condition i could but
+
+0:01:28.000,0:01:31.439
+n is kind of an unknown at this point
+
+0:01:29.920,0:01:33.119
+i'm not sure what n is going to look
+
+0:01:31.439,0:01:36.159
+like the one thing i'm absolutely sure
+
+0:01:33.119,0:01:37.200
+of is that the factorial always ends at
+
+0:01:36.159,0:01:39.040
+1.
+
+0:01:37.200,0:01:42.000
+so if i take an example and say
+
+0:01:39.040,0:01:45.759
+something like factorial 5 factorial 5
+
+0:01:42.000,0:01:46.960
+is going to be 5 times 4 times 3 times 2
+
+0:01:45.759,0:01:48.159
+times 1.
+
+0:01:46.960,0:01:50.560
+great
+
+0:01:48.159,0:01:53.280
+now that i have that i can start
+
+0:01:50.560,0:01:55.119
+thinking about what the logic is that i
+
+0:01:53.280,0:01:57.840
+want to repeat
+
+0:01:55.119,0:02:00.880
+and looking at this i can tell that a
+
+0:01:57.840,0:02:02.439
+factorial given a certain number like 5
+
+0:02:00.880,0:02:05.520
+is basically just
+
+0:02:02.439,0:02:08.399
+accumulating the product of that number
+
+0:02:05.520,0:02:10.720
+times itself minus one
+
+0:02:08.399,0:02:14.080
+and that logic is going to lend itself
+
+0:02:10.720,0:02:14.080
+really well to a loop
+
+0:02:14.239,0:02:19.760
+the first thing i want to do in here is
+
+0:02:16.720,0:02:22.319
+initialize and declare a variable i can
+
+0:02:19.760,0:02:25.040
+use to track that product as it
+
+0:02:22.319,0:02:27.360
+accumulates as i say 5 times 4 times 3
+
+0:02:25.040,0:02:29.120
+times 2 times 1 etc
+
+0:02:27.360,0:02:31.599
+so i'm going to call that product since
+
+0:02:29.120,0:02:34.000
+we're doing multiplication here
+
+0:02:31.599,0:02:36.800
+and i'm going to initialize it to the
+
+0:02:34.000,0:02:39.280
+value 1 and i want to initialize this to
+
+0:02:36.800,0:02:41.680
+one not zero because anything multiplied
+
+0:02:39.280,0:02:43.760
+by one is itself and anything multiplied
+
+0:02:41.680,0:02:47.360
+by zero is zero which will not help me
+
+0:02:43.760,0:02:47.360
+calculate a factorial
+
+0:02:47.599,0:02:51.360
+so now i need to figure out my logic for
+
+0:02:50.160,0:02:53.440
+the loop
+
+0:02:51.360,0:02:55.440
+as i mentioned i think i'm going to go
+
+0:02:53.440,0:02:58.319
+down so i'm going to start with this
+
+0:02:55.440,0:03:00.879
+given number n so for my initializer
+
+0:02:58.319,0:03:02.720
+expression i want to initialize
+
+0:03:00.879,0:03:07.680
+something called counter
+
+0:03:02.720,0:03:07.680
+to my given number my parameter n
+
+0:03:08.480,0:03:14.239
+now i need to provide a conditional so i
+
+0:03:11.680,0:03:17.040
+want a conditional that will return true
+
+0:03:14.239,0:03:18.879
+while the loop should continue executing
+
+0:03:17.040,0:03:22.000
+and for this i think i'm just going to
+
+0:03:18.879,0:03:25.040
+say counter is greater than zero because
+
+0:03:22.000,0:03:26.959
+this will cause counter to the loop to
+
+0:03:25.040,0:03:28.640
+keep iterating while counter is greater
+
+0:03:26.959,0:03:30.480
+than zero but as soon as counter is
+
+0:03:28.640,0:03:32.720
+equal to zero it will return false and
+
+0:03:30.480,0:03:35.840
+will execute out of the loop
+
+0:03:32.720,0:03:39.120
+and then finally i'm going to decrement
+
+0:03:35.840,0:03:42.400
+counter by one each time the loop
+
+0:03:39.120,0:03:44.959
+executes so if we get something like
+
+0:03:42.400,0:03:48.640
+five first we start with five then we
+
+0:03:44.959,0:03:51.599
+subtract 1 and we get 4 down to 3 2 1
+
+0:03:48.640,0:03:54.000
+etc until counter is 0 at which point
+
+0:03:51.599,0:03:56.959
+this returns false and the loop will
+
+0:03:54.000,0:03:56.959
+stop executing
+
+0:03:58.000,0:04:02.400
+so now i need to figure out what goes in
+
+0:04:00.000,0:04:05.360
+the body of my loop
+
+0:04:02.400,0:04:10.159
+and for this i want to reassign my
+
+0:04:05.360,0:04:10.159
+accumulator value my product to
+
+0:04:10.879,0:04:17.120
+the value of product multiplied by
+
+0:04:15.760,0:04:20.160
+counter
+
+0:04:17.120,0:04:22.079
+so because product starts with one and
+
+0:04:20.160,0:04:24.320
+counter on the first iteration of the
+
+0:04:22.079,0:04:26.960
+loop will be set to n for our example
+
+0:04:24.320,0:04:28.400
+let's just say this is five for our
+
+0:04:26.960,0:04:31.199
+first iteration of the loop we're going
+
+0:04:28.400,0:04:32.400
+to reassign product to 1 times 5 which
+
+0:04:31.199,0:04:34.400
+is 5.
+
+0:04:32.400,0:04:37.199
+then we decrement counter so counter
+
+0:04:34.400,0:04:38.960
+becomes 4 and then on our next iteration
+
+0:04:37.199,0:04:41.360
+of the loop we're going to multiply
+
+0:04:38.960,0:04:44.800
+product which is 5 by 4 which will give
+
+0:04:41.360,0:04:47.040
+us 20. then we multiply 20 by 3
+
+0:04:44.800,0:04:48.960
+and that will give us 60 etcetera
+
+0:04:47.040,0:04:51.280
+etcetera until we get down to 1 at which
+
+0:04:48.960,0:04:52.400
+point we will get the final factorial of
+
+0:04:51.280,0:04:54.800
+5.
+
+0:04:52.400,0:04:56.720
+so what i want to do after i execute out
+
+0:04:54.800,0:04:59.680
+of the loop since i'm accumulating that
+
+0:04:56.720,0:05:02.880
+value with product is i want to return
+
+0:04:59.680,0:05:06.560
+the value of product
+
+0:05:02.880,0:05:09.280
+and that ought to give me my factorial
+
+0:05:06.560,0:05:11.440
+so now that i have my logic in place and
+
+0:05:09.280,0:05:15.120
+i'm feeling pretty good about that i'm
+
+0:05:11.440,0:05:16.240
+going to move to the terminal
+
+0:05:15.120,0:05:19.039
+and
+
+0:05:16.240,0:05:19.039
+run my file
+
+0:05:19.600,0:05:25.680
+and it looks like things are working out
+
+0:05:22.720,0:05:29.600
+as they should a factorial of 1 is 1
+
+0:05:25.680,0:05:33.759
+factorial of 2 is 2 factorial of 3 is 6
+
+0:05:29.600,0:05:35.520
+factorial of 4 is 24 factorial of 5 is
+
+0:05:33.759,0:05:37.360
+120
+
+0:05:35.520,0:05:42.400
+and then i'm just gonna go back and
+
+0:05:37.360,0:05:45.120
+check 720 50 40 40320
+
+0:05:42.400,0:05:47.199
+and as you can see those are in fact the
+
+0:05:45.120,0:05:50.840
+expected results so it looks like our
+
+0:05:47.199,0:05:50.840
+function is working
+
