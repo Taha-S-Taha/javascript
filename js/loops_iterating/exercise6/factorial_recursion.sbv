@@ -1,0 +1,414 @@
+0:00:01.280,0:00:05.440
+in this exercise we're asked to
+
+0:00:03.280,0:00:07.120
+implement a factorial function with the
+
+0:00:05.440,0:00:09.840
+same functionality as a previous
+
+0:00:07.120,0:00:11.759
+exercise except instead of using a for
+
+0:00:09.840,0:00:13.759
+loop like we did before we're going to
+
+0:00:11.759,0:00:16.080
+use recursion
+
+0:00:13.759,0:00:18.880
+so a recursive function is one that
+
+0:00:16.080,0:00:21.119
+calls itself it contains a baseline
+
+0:00:18.880,0:00:23.039
+condition and that represents the stop
+
+0:00:21.119,0:00:25.359
+point at which the function returns
+
+0:00:23.039,0:00:27.760
+something and then it can use that
+
+0:00:25.359,0:00:29.679
+return value to climb back up all the
+
+0:00:27.760,0:00:32.160
+levels of the recursive calls it made
+
+0:00:29.679,0:00:34.239
+before reaching that condition
+
+0:00:32.160,0:00:36.079
+so the logic of calculating a factorial
+
+0:00:34.239,0:00:37.200
+actually lends itself really well for
+
+0:00:36.079,0:00:39.600
+this
+
+0:00:37.200,0:00:41.760
+let's define our function
+
+0:00:39.600,0:00:43.840
+we can call it factorial just like we
+
+0:00:41.760,0:00:45.039
+did before and then we're going to
+
+0:00:43.840,0:00:47.840
+provide
+
+0:00:45.039,0:00:50.239
+a single argument a positive integer and
+
+0:00:47.840,0:00:51.760
+we're told that we can be sure it will
+
+0:00:50.239,0:00:53.520
+always be a positive integer so we don't
+
+0:00:51.760,0:00:55.440
+have to worry too much about validation
+
+0:00:53.520,0:00:57.360
+which is nice
+
+0:00:55.440,0:01:00.800
+so we think about the way we implemented
+
+0:00:57.360,0:01:03.280
+this before recall how we decided to
+
+0:01:00.800,0:01:05.040
+decrement from the given number n down
+
+0:01:03.280,0:01:07.520
+to one because we always know a
+
+0:01:05.040,0:01:09.360
+factorial ends at one
+
+0:01:07.520,0:01:12.080
+we can use this to help us figure out
+
+0:01:09.360,0:01:14.799
+our baseline condition the factorial of
+
+0:01:12.080,0:01:17.439
+1 is always just 1 with no additional
+
+0:01:14.799,0:01:19.680
+operations and this allows us to say
+
+0:01:17.439,0:01:22.560
+something like if n
+
+0:01:19.680,0:01:27.840
+is equal to 1 then we just want to
+
+0:01:22.560,0:01:27.840
+return 1. factorial of 1 is always 1.
+
+0:01:29.200,0:01:32.000
+so
+
+0:01:30.079,0:01:34.560
+this way whenever the function is called
+
+0:01:32.000,0:01:36.479
+with an argument of 1 it will return 1
+
+0:01:34.560,0:01:37.759
+without having to recursively call
+
+0:01:36.479,0:01:39.759
+itself which is what we're going to do
+
+0:01:37.759,0:01:41.360
+down here on line 6.
+
+0:01:39.759,0:01:44.000
+so now we have our stop condition in
+
+0:01:41.360,0:01:46.159
+place we can think about how we can
+
+0:01:44.000,0:01:47.439
+work the recursive function call into
+
+0:01:46.159,0:01:49.520
+our logic
+
+0:01:47.439,0:01:53.200
+and what we want to do here is get the
+
+0:01:49.520,0:01:58.479
+result of multiplying n by
+
+0:01:53.200,0:02:00.560
+the factorial of n minus 1 right
+
+0:01:58.479,0:02:02.159
+and we want to
+
+0:02:00.560,0:02:04.560
+return that
+
+0:02:02.159,0:02:09.759
+because if we think about it if we look
+
+0:02:04.560,0:02:11.120
+at what a factorial is factorial 5
+
+0:02:09.759,0:02:12.400
+is
+
+0:02:11.120,0:02:17.920
+5
+
+0:02:12.400,0:02:18.959
+times 4 times 3 times 2 times 1 right
+
+0:02:17.920,0:02:22.720
+well
+
+0:02:18.959,0:02:23.599
+what is factorial 4
+
+0:02:22.720,0:02:26.560
+well
+
+0:02:23.599,0:02:33.200
+factorial 4 is 4 times 3 times 2 times
+
+0:02:26.560,0:02:36.319
+1. so really factorial 5 is just 5 times
+
+0:02:33.200,0:02:39.760
+factorial 4.
+
+0:02:36.319,0:02:42.720
+similarly factorial 4 is just factorial
+
+0:02:39.760,0:02:42.720
+4 times
+
+0:02:43.020,0:02:49.239
+[Music]
+
+0:02:45.519,0:02:49.239
+factorial 3.
+
+0:02:52.720,0:02:58.319
+factorial 3 is really just fact 3 times
+
+0:03:02.640,0:03:05.599
+factorial 2
+
+0:03:07.120,0:03:17.360
+and factorial 2 is really just 2 times
+
+0:03:12.800,0:03:17.360
+factorial 1 which we know is 1.
+
+0:03:17.519,0:03:23.200
+so the nice thing is when we call this
+
+0:03:20.400,0:03:25.840
+let's keep with our example 5 here if we
+
+0:03:23.200,0:03:28.720
+call an outer function call 2 factorial
+
+0:03:25.840,0:03:31.599
+5 this is how it gets evaluated
+
+0:03:28.720,0:03:34.560
+n will be assigned to 5. we'll evaluate
+
+0:03:31.599,0:03:36.480
+the condition and 5 is not equal to 1 so
+
+0:03:34.560,0:03:39.920
+we jump down here to line 6 and then
+
+0:03:36.480,0:03:43.599
+this becomes 5 times factorial 4.
+
+0:03:39.920,0:03:45.920
+now javascript has to evaluate this so
+
+0:03:43.599,0:03:48.239
+it again calls the factorial function
+
+0:03:45.920,0:03:50.239
+with 4 as an argument so we call it
+
+0:03:48.239,0:03:53.120
+again n is assigned to 4 and it's not
+
+0:03:50.239,0:03:55.840
+equal to 1. so now we need to look at
+
+0:03:53.120,0:03:58.720
+down here we're getting 4 times
+
+0:03:55.840,0:04:00.879
+factorial 3. factorial 3 needs to be
+
+0:03:58.720,0:04:03.920
+evaluated so we're going to assign n to
+
+0:04:00.879,0:04:06.400
+3 and then n is not equal to 1 so we
+
+0:04:03.920,0:04:08.239
+come down here and evaluate 3 times
+
+0:04:06.400,0:04:10.720
+factorial 2.
+
+0:04:08.239,0:04:14.080
+in order to evaluate this factorial 2
+
+0:04:10.720,0:04:18.239
+needs to be evaluated so we assign n to
+
+0:04:14.080,0:04:21.120
+2 and 2 is not equal to 1 so we're going
+
+0:04:18.239,0:04:23.680
+to evaluate this which becomes 2 times
+
+0:04:21.120,0:04:27.520
+factorial 1. and then at this point when
+
+0:04:23.680,0:04:30.080
+we call factorial 1 n is assigned to 1
+
+0:04:27.520,0:04:32.400
+at this point n will be equal to 1 so
+
+0:04:30.080,0:04:35.840
+this returns true and we return the
+
+0:04:32.400,0:04:39.440
+value 1. so when we try to evaluate this
+
+0:04:35.840,0:04:43.280
+expression here in the recursive stack
+
+0:04:39.440,0:04:44.720
+this is going to evaluate to 1.
+
+0:04:43.280,0:04:46.720
+and this is nice because now this is
+
+0:04:44.720,0:04:49.199
+just a simple multiplication operation
+
+0:04:46.720,0:04:51.680
+javascript can evaluate that no problem
+
+0:04:49.199,0:04:54.639
+without any kind of recursion at all so
+
+0:04:51.680,0:04:57.040
+this of course is going to return 2
+
+0:04:54.639,0:05:00.560
+and then this becomes because of this
+
+0:04:57.040,0:05:03.360
+return keyword here the return value for
+
+0:05:00.560,0:05:06.560
+this invocation of factorial so this
+
+0:05:03.360,0:05:09.039
+becomes 3 times 2
+
+0:05:06.560,0:05:12.639
+which returns 6.
+
+0:05:09.039,0:05:14.720
+and then this 6 becomes the return value
+
+0:05:12.639,0:05:16.479
+of this factorial function call
+
+0:05:14.720,0:05:19.600
+factorial 3
+
+0:05:16.479,0:05:23.600
+so this becomes 4 times 6
+
+0:05:19.600,0:05:26.000
+which resolves to 24
+
+0:05:23.600,0:05:30.000
+and then this 24 becomes the return
+
+0:05:26.000,0:05:30.000
+value of factorial 4.
+
+0:05:30.400,0:05:37.840
+so this becomes 5 times 24 which
+
+0:05:34.320,0:05:41.600
+turns out to 120 and then finally this
+
+0:05:37.840,0:05:44.560
+120 becomes the return value of our
+
+0:05:41.600,0:05:47.120
+original outer call to factorial when we
+
+0:05:44.560,0:05:48.479
+passed an argument of 5.
+
+0:05:47.120,0:05:49.520
+so that's kind of how the function is
+
+0:05:48.479,0:05:52.639
+working
+
+0:05:49.520,0:05:56.240
+and if i go ahead and paste in
+
+0:05:52.639,0:05:56.240
+my test cases here
+
+0:05:56.720,0:06:01.600
+we'll be able to see it in action i'm
+
+0:05:59.680,0:06:04.000
+going to head to the terminal
+
+0:06:01.600,0:06:04.840
+and i'm going to
+
+0:06:04.000,0:06:07.840
+run the
+
+0:06:04.840,0:06:10.240
+file and as you can see we are getting
+
+0:06:07.840,0:06:11.520
+our correct value for
+
+0:06:10.240,0:06:13.759
+factorial
+
+0:06:11.520,0:06:15.759
+so that's how we can use recursion to
+
+0:06:13.759,0:06:20.680
+help us solve these kind of repetitive
+
+0:06:15.759,0:06:20.680
+problems that have a stop condition
+

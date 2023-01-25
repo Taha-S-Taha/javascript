@@ -1,0 +1,246 @@
+0:00:02.520,0:00:07.020
+in this exercise we're given some code
+
+0:00:04.859,0:00:08.040
+and asked to refactor it to get rid of
+
+0:00:07.020,0:00:10.860
+repetition
+
+0:00:08.040,0:00:12.719
+specifically we have a repeated call to
+
+0:00:10.860,0:00:15.660
+this random number between function
+
+0:00:12.719,0:00:18.660
+along with incrementing this tries
+
+0:00:15.660,0:00:20.760
+variable on line six and seven and lines
+
+0:00:18.660,0:00:22.260
+10 and 11.
+
+0:00:20.760,0:00:24.060
+if we zoom out and take a take a broad
+
+0:00:22.260,0:00:25.140
+view of the code what are we trying to
+
+0:00:24.060,0:00:28.320
+do here
+
+0:00:25.140,0:00:31.080
+well on line five we are declaring and
+
+0:00:28.320,0:00:34.260
+initializing the variable tries to zero
+
+0:00:31.080,0:00:37.680
+on line six we are declaring the
+
+0:00:34.260,0:00:40.500
+variable result and initializing it to
+
+0:00:37.680,0:00:42.360
+the return value of calling this random
+
+0:00:40.500,0:00:44.040
+number between function
+
+0:00:42.360,0:00:45.660
+if we pop up to lines one through three
+
+0:00:44.040,0:00:47.520
+we can see that the random number
+
+0:00:45.660,0:00:49.320
+between is just generating a random
+
+0:00:47.520,0:00:50.879
+number between a given minimum and
+
+0:00:49.320,0:00:53.640
+maximum
+
+0:00:50.879,0:00:56.219
+and then once we call the function we
+
+0:00:53.640,0:00:59.039
+are incrementing our Triads variable by
+
+0:00:56.219,0:01:03.359
+one so this first invocation to random
+
+0:00:59.039,0:01:06.119
+number between represents a single try
+
+0:01:03.359,0:01:08.760
+on lines 9 through 12 we have a while
+
+0:01:06.119,0:01:11.220
+loop and this will execute while this
+
+0:01:08.760,0:01:13.260
+conditional expression returns true so
+
+0:01:11.220,0:01:15.360
+while result is less than or equal to
+
+0:01:13.260,0:01:17.220
+two the code within the while loop will
+
+0:01:15.360,0:01:19.439
+continue to execute
+
+0:01:17.220,0:01:21.240
+the loop calls the random number between
+
+0:01:19.439,0:01:23.040
+function in the same manner we did
+
+0:01:21.240,0:01:25.920
+before and then reassigns the return
+
+0:01:23.040,0:01:28.680
+value to result tries is Again
+
+0:01:25.920,0:01:30.360
+incremented by one
+
+0:01:28.680,0:01:32.659
+and this will keep happening until
+
+0:01:30.360,0:01:35.700
+result is less than or equal to 2
+
+0:01:32.659,0:01:38.220
+returns false meaning it will keep going
+
+0:01:35.700,0:01:41.759
+until result is greater than 2.
+
+0:01:38.220,0:01:44.040
+finally once we exit the loop on line 14
+
+0:01:41.759,0:01:45.960
+we are logging how many tries as
+
+0:01:44.040,0:01:48.000
+represented by the tries variable it
+
+0:01:45.960,0:01:49.079
+took us to get a result that was greater
+
+0:01:48.000,0:01:51.780
+than 2.
+
+0:01:49.079,0:01:53.759
+so simply put what we want to do here is
+
+0:01:51.780,0:01:57.299
+call random number between at least once
+
+0:01:53.759,0:01:59.340
+increment tries and then continually do
+
+0:01:57.299,0:02:01.500
+this until we get a result that meets
+
+0:01:59.340,0:02:04.079
+our specific criteria in this case a
+
+0:02:01.500,0:02:06.960
+result that is greater than 2.
+
+0:02:04.079,0:02:09.300
+so when we have code that we know has to
+
+0:02:06.960,0:02:12.000
+be executed at least once we can use a
+
+0:02:09.300,0:02:15.300
+do while loop which will execute the
+
+0:02:12.000,0:02:17.459
+loop at least once and then continue to
+
+0:02:15.300,0:02:20.099
+execute it while the conditional we give
+
+0:02:17.459,0:02:21.780
+to while returns true and this will help
+
+0:02:20.099,0:02:24.900
+us get rid of the repetitive calls to
+
+0:02:21.780,0:02:27.900
+random number between an incrementation
+
+0:02:24.900,0:02:31.319
+so what we want to do here is declare
+
+0:02:27.900,0:02:33.360
+the result variable without necessarily
+
+0:02:31.319,0:02:35.760
+initializing it
+
+0:02:33.360,0:02:38.220
+because this will allow us to utilize it
+
+0:02:35.760,0:02:41.160
+in the conditional expression then we're
+
+0:02:38.220,0:02:44.040
+going to move this while bit
+
+0:02:41.160,0:02:45.720
+down here to the bottom of the loop
+
+0:02:44.040,0:02:49.620
+because this is where it will get
+
+0:02:45.720,0:02:52.560
+evaluated and we'll change this to do so
+
+0:02:49.620,0:02:56.819
+we're going to do this once and then
+
+0:02:52.560,0:02:59.879
+we'll keep doing it while this is true
+
+0:02:56.819,0:03:03.680
+and I need to get rid of this repetitive
+
+0:02:59.879,0:03:03.680
+incrementation as well
+
+0:03:04.620,0:03:09.420
+so now we have much cleaner less
+
+0:03:07.620,0:03:12.840
+repetitive code that should have the
+
+0:03:09.420,0:03:14.459
+exact same functionality and if I run
+
+0:03:12.840,0:03:16.440
+the code in the terminal just to make
+
+0:03:14.459,0:03:18.720
+sure it still works which is always a
+
+0:03:16.440,0:03:20.640
+good idea when you're refactoring I can
+
+0:03:18.720,0:03:22.920
+see that it took one try to get a number
+
+0:03:20.640,0:03:25.340
+greater than two so it looks like we are
+
+0:03:22.920,0:03:25.340
+still good
+
